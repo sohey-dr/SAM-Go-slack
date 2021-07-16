@@ -42,21 +42,6 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 		return events.APIGatewayProxyResponse{}, ErrNoIP
 	}
 
-	jsonStr := `{"text": "こんにちは"}`
-	url := os.Getenv("SLACK_HOOK")
-
-	req, _ := http.NewRequest(
-			"POST",
-			url,
-			bytes.NewBuffer([]byte(jsonStr)),
-	)
-
-	req.Header.Set("Content-Type", "application/json")
-
-	client := &http.Client{}
-	res, _ := client.Do(req)
-
-	defer res.Body.Close()
 
 	return events.APIGatewayProxyResponse{
 		Body:       fmt.Sprintf("成功ですぞ, %v", string(ip)),
