@@ -23,10 +23,10 @@ Resources:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
             Path: /hello
-            Method: GET
+            Method: POST
       Environment: # More info about Env Vars: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#environment-object
         Variables:
-
+          SLACK_HOOK: "https://hooks.slack.com/services/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"
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

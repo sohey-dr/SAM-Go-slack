@@ -21,10 +21,10 @@ Resources:
           Type: Api
           Properties:
             Path: /hello
-            Method: GET
+            Method: POST
       Environment:
         Variables:
-          SLACK_HOOK: https://hooks.slack.com/services/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
+          SLACK_HOOK: https://hooks.slack.com/services/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
 Outputs:
   HelloWorldAPI:
     Description: API Gateway endpoint URL for Prod environment for First Function
